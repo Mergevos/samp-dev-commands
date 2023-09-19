@@ -1,6 +1,6 @@
 # open-test-mode
 
-[![sampctl](https://img.shields.io/badge/sampctl-open--test--mode-2f2f2f.svg?style=for-the-badge)](https://github.com/Mergevos/open-test-mode)
+[![mergevos](https://img.shields.io/badge/mergevos-samp--dev--commands-2f2f2f.svg?style=for-the-badge)](https://github.com/Mergevos/samp-dev-commands)
 
 <!--
 Short description of your library, why it's useful, some examples, pictures or
@@ -31,13 +31,13 @@ Happy Pawning!
 Simply install to your project:
 
 ```bash
-sampctl package install Mergevos/open-test-mode
+sampctl package install Mergevos/samp-dev-commands
 ```
 
 Include in your code and begin using the library:
 
 ```pawn
-#include <open-test-mode>
+#include <dev-commands>
 ```
 
 ## Usage
@@ -48,6 +48,17 @@ the source code, direct users there. If not, list your API and describe it well
 in this section. If your library is passive and has no API, simply omit this
 section.
 -->
+
+Simply include it in your gamemode and that's it. You have all needed commands.
+
+```pawn
+CMD:xgoto(playerid, params[])
+CMD:vehicle(playerid, params[])
+CMD:weapon(playerid, params[])
+CMD:health(playerid, params[])
+CMD:fixveh(playerid, params[])
+CMD:port(playerid, params[])
+```
 
 ## Testing
 
