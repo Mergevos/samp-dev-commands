@@ -52,13 +52,15 @@ section.
 Simply include it in your gamemode and that's it. You have all needed commands.
 
 ```pawn
-CMD:xgoto(playerid, params[])
-CMD:vehicle(playerid, params[])
-CMD:weapon(playerid, params[])
-CMD:health(playerid, params[])
-CMD:fixveh(playerid, params[])
-CMD:port(playerid, params[])
+CMD:xgoto(playerid, params[]) // goes to precise coords
+CMD:vehicle(playerid, params[]) // spawns a vehicle
+CMD:weapon(playerid, params[]) // gives a weapon to player or to a target
+CMD:health(playerid, params[]) // sets health to a player or to a target
+CMD:fixveh(playerid, params[]) // fix player vehicle
+CMD:port(playerid, params[]) // ports a player to a target or target to the player
 ```
+
+If you find anymore commands or have any more ideas, open pull request.
 
 ## Testing
 
