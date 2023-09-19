@@ -130,3 +130,20 @@ CMD:port(playerid, params[])
     return 1;
 }
 
+CMD:world(playerid, params[])
+{
+    new world;
+    if(sscanf(params, "d", world))
+    {
+        return SendClientMessage(playerid, -1, "USAGE: /world [world (-1 to get world)]");
+    }
+    if(world == -1)
+    {
+        new str[60];
+        format(str, sizeof(str), "Your virtual world is %d", GetPlayerVirtualWorld(playerid));
+        return SendClientMessage(playerid, -1, str);
+    }
+    SetPlayerVirtualWorld(playerid, world);
+    SendClientMessage(playerid, -1, "Successfully changed virtual world");
+    return 1;
+}
