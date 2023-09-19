@@ -1,0 +1,11 @@
+{
+	"user": "Mergevos",
+	"repo": "samp-dev-commands",
+	"entry": "test.pwn",
+	"output": "test.amx",
+	"dependencies": [
+		"pawn-lang/samp-stdlib",
+		"Y-Less/sscanf:v2.13.8",
+		"Southclaws/zcmd"
+	]
+}
