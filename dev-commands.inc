@@ -14,12 +14,14 @@
 
 CMD:xgoto(playerid, params[])
 {
-    new Float: x, Float: y, Float: z;
-    if(sscanf(params, "fff", x, y, z))
+    new Float: x, Float: y, Float: z, world, interior;
+    if(sscanf(params, "fffI(-1)I(-1)", x, y, z, world, interior))
     {
-        return SendClientMessage(playerid, -1, "USAGE: /xgoto [x][y][z]");
+        return SendClientMessage(playerid, -1, "USAGE: /xgoto [x][y][z][world][interior]");
     }
     SetPlayerPos(playerid, x, y, z);
+    if(world != -1) SetPlayerVirtualWorld(playerid, world);
+    if(interior != -1) SetPlayerInterior(playerid, interior);
     SendClientMessage(playerid, -1, "DEV: Successfully teleported");
     return 1;
 }
@@ -130,3 +132,26 @@ CMD:port(playerid, params[])
     return 1;
 }
 
+CMD:world(playerid, params[])
+{
+    new string[46];
+    format(string, sizeof(string), "Current virtualworld: %d", GetPlayerVirtualWorld(playerid));
+    SendClientMessage(playerid, 0x92C0BEFF, string);
+    return 1;
+}
+
+CMD:goxyz(playerid,params[])
+{
+    // /goxyz 0.0, 0.0, 3.0, 10, 0
+
+    new Float: x, Float: y, Float: z, world, interior, string[72];
+    if(sscanf(params, "s[72]", string)) return return SendClientMessage(playerid, -1, "USAGE: /goxyz [x,y,z,world,interior]"); 
+
+    sscanf(string, "p<,>fffii", x, y, z, world, interior);
+
+    SetPlayerPos(playerid, x, y, z);
+    if(world != -1) SetPlayerVirtualWorld(playerid, world);
+    if(interior != -1) SetPlayerInterior(playerid, interior);
+    SendClientMessage(playerid, -1, "DEV: Successfully teleported");
+    return 1;
+}
